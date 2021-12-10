@@ -1,0 +1,37 @@
+
+#button , #Input-area ,#input-ip {
+    height: 6.5vh;
+    
+}
+    
+#Input-area{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    position: relative;
+    border-radius: 15px;
+    margin-bottom: 110px;
+    min-width: 245px;
+    overflow: hidden;
+}
+#button{
+    width: 11%;
+    
+    
+    border: none;
+    background: #000;
+    cursor: pointer;
+    color: white;
+    font-weight:bold ;
+}
+
+#input-ip{
+    width: 89%;
+    font-size: 24px;
+    border: none;
+}
+
+
+
+
