@@ -11,8 +11,7 @@ body{
     flex-direction:column ;
     justify-content: center;
     align-items: center;
-    background:url("https://github.com/AhmadOmar1/IpFinderProject/blob/main/pattern-bg.png?raw=true%22");
-    background-repeat: no-repeat;
+    background:url("pattern-bg.png");
     background-size:cover;
 }
 #form-container h1{
@@ -31,6 +30,7 @@ body{
     justify-content: center;
     align-items: center;
     color: whitesmoke;
+
 }
 
 
@@ -73,3 +73,22 @@ p{
     font-family: 'Rubik', sans-serif;
     width: 150px;
 }
+
+
+@media only screen and (max-width: 787px) {
+    #output-area{ 
+        height: 34%;
+        top: 45.5%;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        
+        
+    }
+    .column{
+         margin: auto;
+        }
+    .column:not(:last-child){
+        border-right: none;
+        }
+  }
