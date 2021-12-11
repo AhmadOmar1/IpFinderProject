@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>IP Address Tracker</title>
+</head>
+<body>
+    <header>
+        <h1>IP Address Tracker</h1>   
+        <div id="form-container">
+            <h1>IP Address Tracker</h1>
+            <!-- Input - Search Form Entering Ip -->
+            <div id="Input-area">
+                <input id="input-ip" type="text" placeholder="   Search for any IP address or domain">
+                <input id="button" type="button" value="&#x276F;">
+            </div>      
+    </header>
+        </div>  
+    <!-- output Form For display  -->
+    <div id="output-area">
+        <div class="column">
+            <h6 id="ip-address">IP ADDRESS</h6>
+            <p id="ipAddressPargraph">Loading...</p>
+       </div>
+       <div class="column">
+            <h6 id="location">LOCATION</h6>
+            <p  id="LocationPargraph">Loading...</p>
+       </div>
+       <div class="column">
+            <h6 id="timezone">TIMEZONE</h6>
+            <p id="TimeZonePargraph">Loading...</p>
+       </div>
+       <div class="column">
+            <h6 id="isp">ISP</h6>
+            <p id="IspPargraph">Loading...</p>
+       </div>
+
+    </div>
+ <!-- Map Area -->
+   <footer> 
+    <div id="map">
+        <h1>Loading...</h1>
+    </div>
+</footer> 
+
+    <script src="ip.js"></script>
+</body>
+
+</html>
