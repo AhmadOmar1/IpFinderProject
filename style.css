@@ -117,8 +117,8 @@ p{
     .column{
          margin: auto;
         }
-    .column:not(:last-child){
-        border-right: none;
+    .column:not(:first-child){
+        border-left: none;
         }
     #Input-area{
         max-width: 70%;
