@@ -11,7 +11,7 @@ body{
     flex-direction:column ;
     justify-content: center;
     align-items: center;
-    background:url("https://github.com/AhmadOmar1/IpFinderProject/blob/main/pattern-bg.png?raw=true%22");
+    background:url("pattern-bg.png");
     background-repeat: no-repeat;
     background-size:cover;
 }
