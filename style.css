@@ -31,6 +31,39 @@
     width: 89%;
     font-size: 24px;
     border: none;
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#form-container{
+    width: 100vw;
+    height: 35vh;
+    position: relative;
+    display:flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+    background:url("pattern-bg.png");
+    background-size:cover;
+}
+#form-container h1{
+    font-size: 35px;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    height: 40px;
+    margin-bottom: 30px;
+}
+#map{
+    width: 100vw;
+    height: 65vh;
+    background-color: rgb(255, 0, 0);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+
 }
 
 
@@ -47,7 +80,7 @@
     max-width:  1000px; ;
     position: absolute;
     left: 50%;
-    top: 37%;
+    top: 35%;
     width: 53%;
     transform: translate(-50%, -50%);
     padding: 29px 22px;
@@ -76,3 +109,21 @@ p{
     width: 150px;
 }
 
+
+@media only screen and (max-width: 787px) {
+    #output-area{ 
+        height: 34%;
+        top: 45.5%;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        
+        
+    }
+    .column{
+         margin: auto;
+        }
+    .column:not(:last-child){
+        border-right: none;
+        }
+  }
