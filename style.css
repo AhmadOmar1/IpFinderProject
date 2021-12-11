@@ -5,7 +5,7 @@ body{
 
 #form-container{
     width: 100vw;
-    height: 30vh;
+    height: 35vh;
     position: relative;
     display:flex;
     flex-direction:column ;
@@ -25,7 +25,7 @@ body{
 }
 #map{
     width: 100vw;
-    height: 63vh;
+    height: 65vh;
     background-color: rgb(255, 0, 0);
     display:flex;
     justify-content: center;
@@ -42,6 +42,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 700px;
+    height: 60px;
     position: relative;
     border-radius: 15px;
     margin-bottom: 110px;
@@ -50,8 +51,6 @@ body{
 }
 #button{
     width: 11%;
-    
-    
     border: none;
     background: #000;
     cursor: pointer;
@@ -68,28 +67,25 @@ body{
 
 #output-area{
     display: flex;
-    justify-content: space-between;
-    justify-items: center;
+    justify-content: space-evenly;
     background-color: white;
     box-shadow: 8px 4px 16px -4px grey;
     border-radius: 20px;
-    max-width:  1000px; ;
     position: absolute;
     left: 50%;
     top: 35%;
-    width: 53%;
+    width: 70%;
     transform: translate(-50%, -50%);
-    padding: 29px 22px;
-    height: 65px;
-    max-width: 900px;
-    min-width: 221px;  
+    padding: 29px 0PX;
+    height: 100px;
+    
 }
 .column{
-    padding: 0px 40px 0px 20px;
+    
     width: 150px;
-    margin: auto;
+    text-align: left;
 }
-.column:not(:last-child){
+.column:not(:last-child) {
     border-right: 1px solid lightgrey;
 }
 h6{
@@ -107,10 +103,11 @@ p{
 
 
 
-@media only screen and (max-width: 787px) {
+@media only screen and (max-width: 786PX) {
+
     #output-area{ 
-        height: 34%;
-        top: 45.5%;
+        height: 42%;
+        top: 47%;
         flex-direction: column;
         text-align: center;
         justify-content: center;
@@ -123,4 +120,16 @@ p{
     .column:not(:last-child){
         border-right: none;
         }
+    #Input-area{
+        max-width: 70%;
+        
+    }
+    #Input-area #input-ip{
+        font-size: 12.5px;
+        
+    }
+    #form-container h1{
+        font-size: x-large;
+        margin-top: 30px;
+    }
   }
