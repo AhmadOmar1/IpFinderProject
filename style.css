@@ -112,7 +112,6 @@ p{
         text-align: center;
         justify-content: center;
         
-        
     }
     .column{
          margin: auto;
@@ -122,7 +121,6 @@ p{
         }
     #Input-area{
         max-width: 70%;
-        
     }
     #Input-area #input-ip{
         font-size: 12.5px;
@@ -133,3 +131,5 @@ p{
         margin-top: 30px;
     }
   }
+
+
