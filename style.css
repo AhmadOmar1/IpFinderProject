@@ -2,7 +2,6 @@ body{
     margin: 0;
     padding: 0;
 }
-
 #form-container{
     width: 100vw;
     height: 35vh;
@@ -34,9 +33,7 @@ body{
 }
 #button , #Input-area ,#input-ip {
     height: 6.5vh;
-    
-}
-    
+} 
 #Input-area{
     display:flex;
     justify-content: center;
@@ -47,24 +44,23 @@ body{
     border-radius: 15px;
     margin-bottom: 110px;
     min-width: 245px;
-    overflow: hidden;
+   /* overflow: hidden; */
 }
 #button{
     width: 11%;
+    border-radius: 0px 15px 15px 0px;
     border: none;
     background: #000;
     cursor: pointer;
     color: white;
     font-weight:bold ;
 }
-
 #input-ip{
     width: 89%;
+    border-radius: 15px 0px 0px 15px;
     font-size: 24px;
     border: none;
 }
-
-
 #output-area{
     display: flex;
     justify-content: space-evenly;
@@ -78,7 +74,6 @@ body{
     transform: translate(-50%, -50%);
     padding: 29px 45PX;
     height: 70px;
-    
 }
 .column{
     
@@ -100,18 +95,13 @@ p{
     font-family: 'Rubik', sans-serif;
     width: 150px;
 }
-
-
-
 @media only screen and (max-width: 768PX) {
-
     #output-area{ 
         height: 42%;
         top: 47%;
         flex-direction: column;
         text-align: center;
-        justify-content: center;
-        
+        justify-content: center; 
     }
     .column{
          margin: auto;
@@ -130,6 +120,6 @@ p{
         font-size: x-large;
         margin-top: 30px;
     }
-  }
+}
 
 
