@@ -36,7 +36,7 @@ function print(data)
 {
     ip_address_print.innerHTML = data.ip;
     location_print.innerHTML = data.location.city + " , " + data.location.region +"<br>"+ data.location.postalCode;
-    tzone_print.innerHTML = data.location.timezone;
+    tzone_print.innerHTML = "UTC " + data.location.timezone;
     isp_print.innerHTML = data.isp ;
  
 }
