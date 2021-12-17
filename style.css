@@ -105,6 +105,7 @@ p{
     }
     .column{
          margin: auto;
+         width: 250px;
         }
     .column:not(:first-child){
         border-left: none;
@@ -119,5 +120,8 @@ p{
     #form-container h1{
         font-size: x-large;
         margin-top: 30px;
+    }
+    p{
+        width: 250px;
     }
 }
