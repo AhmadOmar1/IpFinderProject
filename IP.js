@@ -50,8 +50,6 @@ function textSelection() {
     return document.getElementById(name);
   }
 
-
-  
 // MAP AREA
 const map = L.map('map', {
     'center': [0,0],
@@ -62,3 +60,7 @@ const map = L.map('map', {
           })
     ]
 })
+updateMarker = (update_marker = [-33.665, 18.993]) => {
+    map.setView(update_marker, 13);
+    L.marker(update_marker).addTo(map);
+}
