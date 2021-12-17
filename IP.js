@@ -32,7 +32,6 @@ async function get_ip_information()
     {
         print(data);
         updateMarker([data.location.lat, data.location.lng])
-
     }
 }
 function print(data)
