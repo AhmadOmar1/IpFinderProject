@@ -1,3 +1,4 @@
+
 body{
     margin: 0;
     padding: 0;
@@ -5,11 +6,11 @@ body{
 #form-container{
     width: 100vw;
     height: 35vh;
-    position: relative;   
-     display:flex;
-     flex-direction:column ;
-     justify-content: center;
-     align-items: center;
+    position: relative;
+    display:flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
     background:url("pattern-bg.png");
     background-repeat: no-repeat;
     background-size:cover;
@@ -33,7 +34,7 @@ body{
 }
 #button , #Input-area ,#input-ip {
     height: 6.5vh;
-}
+} 
 #Input-area{
     display:flex;
     justify-content: center;
@@ -46,7 +47,6 @@ body{
     min-width: 245px;
    /* overflow: hidden; */
 }
-
 #button{
     width: 11%;
     border-radius: 0px 15px 15px 0px;
@@ -69,12 +69,13 @@ body{
     box-shadow: 8px 4px 16px -4px grey;
     border-radius: 20px;
     position: absolute;
-    transform: translate(-50%, -50%);
     left: 50%;
     top: 35%;
     width: 70%;
+    transform: translate(-50%, -50%);
     padding: 29px 45PX;
     height: 70px;
+
 }
 .column{
     
@@ -87,8 +88,6 @@ body{
 h6{
     color: rgb(172, 172, 172);
     font-family: 'Rubik', sans-serif;
-    font-size: xx-small;
-    margin-top: 0px;
 }
 p{
     font-weight: bold;
@@ -105,13 +104,14 @@ p{
         justify-content: center; 
     }
     .column{
-        margin: auto;
-       }
-   .column:not(:first-child){
-       border-left: none;
-       }
-
-       #Input-area{
+        float: none;
+         margin: auto;
+         font-size: 30px;
+        }
+    .column:not(:first-child){
+        border-left: none;
+        }
+    #Input-area{
         max-width: 70%;
     }
     #Input-area #input-ip{
@@ -122,15 +122,4 @@ p{
         font-size: x-large;
         margin-top: 30px;
     }
-<<<<<<< HEAD
-
 }
-
-
-
-
-
-
-=======
-}
->>>>>>> 36b8379e567127eeba23d7e42ed37a1df4feb982
