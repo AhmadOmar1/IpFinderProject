@@ -24,7 +24,7 @@ async function get_ip_information()
     console.log(data);
     if(data.code == 422)
     {
-        alert(input_ip.value + "IP Address not found !");
+        alert(input_ip.value + " IP Address not found !");
     }
     else
     {
