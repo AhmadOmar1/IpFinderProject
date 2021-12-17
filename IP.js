@@ -6,7 +6,6 @@ let ip_address_print = document.getElementById("ipAddressPargraph")
 let location_print = document.getElementById("LocationPargraph")
 let tzone_print = document.getElementById("TimeZonePargraph")
 let isp_print = document.getElementById("IspPargraph")
-
 window.addEventListener("load", get_my_information)
 searrch_btn.addEventListener("click",get_ip_information)
 
@@ -16,6 +15,7 @@ async function get_my_information()
     const data = await response.json();
     console.log(data);
     print(data);
+    updateMarker([data.location.lat, data.location.lng])
 }
 async function get_ip_information()
 {
@@ -29,6 +29,8 @@ async function get_ip_information()
     else
     {
         print(data);
+        updateMarker([data.location.lat, data.location.lng])
+
     }
 }
 function print(data)
@@ -38,3 +40,16 @@ function print(data)
     tzone_print.innerHTML = "UTC " + data.location.timezone;
     isp_print.innerHTML = data.isp ;
 }
+// MAP AREA
+
+const map = L.map('map', {
+    'center': [0,0],
+    'zoom': 13,
+    'layers': [
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright%22%3EOpenStreetMap</a> contributors'
+          })
+    ]
+})
+
+
