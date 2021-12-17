@@ -1,13 +1,15 @@
 //
-let api ="https://geo.ipify.org/api/v2/country,city?apiKey=at_Dso8uLvMwQs7SxbcA2UMLYfNHDPsm&ipAddress="
-let input_ip = document.getElementById("input-ip")
-let searrch_btn = document.getElementById("button")
-let ip_address_print = document.getElementById("ipAddressPargraph")
-let location_print = document.getElementById("LocationPargraph")
-let tzone_print = document.getElementById("TimeZonePargraph")
-let isp_print = document.getElementById("IspPargraph")
-window.addEventListener("load", get_my_information)
-searrch_btn.addEventListener("click",get_ip_information)
+let api ="https://geo.ipify.org/api/v2/country,city?apiKey=at_Dso8uLvMwQs7SxbcA2UMLYfNHDPsm&ipAddress=";
+let input_ip = id("input-ip");
+let searrch_btn = id("button");
+let ip_address_print = id("ipAddressPargraph");
+let location_print = id("LocationPargraph");
+let tzone_print =id("TimeZonePargraph");
+let isp_print = id("IspPargraph");
+
+window.addEventListener("load", get_my_information);
+searrch_btn.addEventListener("click",get_ip_information);
+input_ip.addEventListener("click",textSelection);
 
 async function get_my_information()
 {
@@ -24,7 +26,7 @@ async function get_ip_information()
     console.log(data);
     if(data.code == 422)
     {
-        alert(input_ip.value + "IP Address not found !");
+        alert(input_ip.value + " IP Address not found !");
     }
     else
     {
@@ -40,8 +42,17 @@ function print(data)
     tzone_print.innerHTML = "UTC " + data.location.timezone;
     isp_print.innerHTML = data.isp ;
 }
-// MAP AREA
 
+function textSelection() {
+    input_ip.select();
+  }
+ function id(name) {
+    return document.getElementById(name);
+  }
+
+
+  
+// MAP AREA
 const map = L.map('map', {
     'center': [0,0],
     'zoom': 13,
@@ -51,5 +62,3 @@ const map = L.map('map', {
           })
     ]
 })
-
-
