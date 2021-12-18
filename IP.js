@@ -46,7 +46,7 @@ function textSelection() {
  function id(name) {
     return document.getElementById(name);
   }
-
+  
 // MAP AREA
 const map = L.map('map', {
     'center': [0,0],
@@ -63,7 +63,12 @@ const markerIcon = L.icon ({
     iconSize: [30, 40]
 });
 
+//display location 
 
+const displaylocation = (lat, lng) => {
+    map.setView([lat, lng], 13);
+    L.marker([lat, lng], {icon: markerIcon}).addTo(map);
+};
 
 
 
