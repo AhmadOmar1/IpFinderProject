@@ -65,10 +65,13 @@ const markerIcon = L.icon ({
 
 //display location 
 
-const displaylocation = (lat, lng) => {
+function displaylocation(lat, lng){
     map.setView([lat, lng], 13);
     L.marker([lat, lng], {icon: markerIcon}).addTo(map);
-};
+}
+
+// enter click 
+
 
 
 
