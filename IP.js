@@ -15,9 +15,8 @@ async function get_my_information()
 {
     const response = await fetch(api);
     const data = await response.json();
-    console.log(data);
     print(data);
-    updateMarker([data.location.lat, data.location.lng])
+    displaylocation(data.location.lat, data.location.lng);
 }
 async function get_ip_information()
 {
@@ -31,8 +30,7 @@ async function get_ip_information()
     else
     {
         print(data);
-        updateMarker([data.location.lat, data.location.lng])
-    }
+        displaylocation(data.location.lat, data.location.lng);    }
 }
 function print(data)
 {
@@ -59,8 +57,7 @@ const map = L.map('map', {
           })
     ]
 })
+// MARKER AREA
 
-updateMarker = (update_marker = [-33.665, 18.993]) => {
-    map.setView(update_marker, 13);
-    L.marker(update_marker).addTo(map);
-}
+
+
