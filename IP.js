@@ -58,6 +58,12 @@ const map = L.map('map', {
     ]
 })
 // MARKER AREA
+const markerIcon = L.icon ({
+    iconUrl: "mark-location.svg",
+    iconSize: [30, 40]
+});
+
+
 
 
 
