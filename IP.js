@@ -71,6 +71,13 @@ function displaylocation(lat, lng){
 }
 
 // enter click 
+input_ip.addEventListener("keyup", function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      searrch_btn.click();
+    }
+  });
+
 
 
 
