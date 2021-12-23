@@ -7,17 +7,10 @@ let location_print = id("LocationPargraph");
 let tzone_print =id("TimeZonePargraph");
 let isp_print = id("IspPargraph");
 
-window.addEventListener("load", get_my_information);
+window.addEventListener("load", get_ip_information);
 searrch_btn.addEventListener("click",get_ip_information);
 input_ip.addEventListener("click",textSelection);
 
-async function get_my_information()
-{
-    const response = await fetch(api);
-    const data = await response.json();
-    print(data);
-    displaylocation(data.location.lat, data.location.lng);
-}
 async function get_ip_information()
 {
     const response = await fetch(api+input_ip.value);
@@ -32,6 +25,7 @@ async function get_ip_information()
         print(data);
         displaylocation(data.location.lat, data.location.lng);    }
 }
+
 function validate(evt)
 {
     let valid = /[0-9.]/;
@@ -41,6 +35,7 @@ function validate(evt)
         evt.preventDefault();
     }
 }
+
 function print(data)
 {
     ip_address_print.innerHTML = data.ip;
