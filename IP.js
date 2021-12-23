@@ -32,6 +32,15 @@ async function get_ip_information()
         print(data);
         displaylocation(data.location.lat, data.location.lng);    }
 }
+function validate(evt)
+{
+    let valid = /[0-9.]/;
+    var ch = String.fromCharCode(evt.which);
+    if(!valid.test(ch))
+    {
+        evt.preventDefault();
+    }
+}
 function print(data)
 {
     ip_address_print.innerHTML = data.ip;
