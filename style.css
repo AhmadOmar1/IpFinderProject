@@ -15,38 +15,39 @@ body{
     background-size:cover;
 }
 #form-container h1{
-    font-size: 35px;
+    font-size: 2.188rem;
     color: white;
     font-family: 'Rubik', sans-serif;
     display: flex;
-    height: 40px;
-    margin-bottom: 30px;
+    height: 2.5rem;
+    margin-bottom: 1.875rem;
 }
 #map{
     width: 100vw;
     height: 65vh;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(102, 101, 101);
     display:flex;
     justify-content: center;
     align-items: center;
     color: whitesmoke;
 }
-#button , #Input-area ,#input-ip {
+ #Input-area ,#input-ip {
     height: 6.5vh;
 } 
 #Input-area{
     display:flex;
     justify-content: center;
     align-items: center;
-    width: 700px;
-    height: 60px;
+    width: 43.75rem;
+    height: 3.75rem;
     position: relative;
-    border-radius: 15px;
-    margin-bottom: 110px;
-    min-width: 245px;
+    border-radius: 0.938rem;
+    margin-bottom: 6.875rem;
+    min-width: 15.313rem;
 }
 #button{
     width: 11%;
+    height: 6.8vh;
     border-radius: 0px 15px 15px 0px;
     border: none;
     background: #000;
@@ -57,7 +58,7 @@ body{
 #input-ip{
     width: 89%;
     border-radius: 15px 0px 0px 15px;
-    font-size: 24px;
+    font-size: 1.5rem;
     border: none;
 
 }
@@ -69,31 +70,30 @@ body{
     border-radius: 20px;
     position: absolute;
     left: 50%;
-    top: 35%;
     width: 70%;
     transform: translate(-50%, -50%);
-    padding: 29px 45PX;
+    padding: 1.813rem 2.813rem;
     min-height: 60px;
     z-index: 1000;
 }
 .column{
-    width: 150px;
+    width: 9.375rem;
 }
 .column:not(:first-child) {
-    padding-left: 10px;
+    padding-left: 0.625rem;
     border-left: 1px solid lightgrey;
 }
 h6{
     color: rgb(172, 172, 172);
     font-family: 'Rubik', sans-serif;
     font-size: xx-small;
-     margin-top: 0px;
+     margin-top: 0rem;
 }
 p{
     font-weight: bold;
     font-size: larger;
     font-family: 'Rubik', sans-serif;
-    width: 150px;
+    width: 9.375rem;
 }
 @media only screen and (max-width: 768PX) {
     #output-area{ 
@@ -105,7 +105,7 @@ p{
     }
     .column{
          margin: auto;
-         width: 250px;
+         width: 15.625rem;
         }
     .column:not(:first-child){
         border-left: none;
@@ -114,14 +114,14 @@ p{
         max-width: 70%;
     }
     #Input-area #input-ip{
-        font-size: 12.5px;
+        font-size: 0.781rem;
         
     }
     #form-container h1{
         font-size: x-large;
-        margin-top: 30px;
+        margin-top: 1.875rem;
     }
     p{
-        width: 250px;
+        width: 15.625rem;
     }
 }
