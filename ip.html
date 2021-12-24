@@ -14,40 +14,29 @@
 </head>
 
 <body> 
-        <div id="form-container">
+    <div id="form-container">
             <h1>IP Address Tracker</h1>
             <!-- Input - Search Form Entering Ip -->
             <div id="Input-area">
                 <input id="input-ip" type="text" onkeypress="validate(event)" placeholder="Search for any IP address or domain">
                 <input id="button" type="button" value="&#x276F;">
             </div>
+               <!-- output Form For display  -->
+        <div class="output">
+            <ul>
+            <li><p class="title">IP ADDRESS</p> <p class="information" id="ipAddressPargraph">Loading...</p></li>
+            <li><p class="title">LOCATION</p> <p class="information" id="LocationPargraph">Loading...</p></li>
+            <li><p class="title">TIME ZONE</p> <p class="information" id="TimeZonePargraph">Loading...</p></li>
+            <li><p class="title">ISP</p> <p class="information" id="IspPargraph">Loading...</p></li>
+            </ul>
         </div>
-    <!-- output Form For display  -->
-    <div id="output-area">
-        <div class="column">
-            <h6 id="ip-address">IP ADDRESS</h6>
-            <p id="ipAddressPargraph">Loading...</p>
-       </div>
-       <div class="column">
-            <h6 id="location">LOCATION</h6>
-            <p  id="LocationPargraph">Loading...</p>
-       </div>
-       <div class="column">
-            <h6 id="timezone">TIMEZONE</h6>
-            <p id="TimeZonePargraph">Loading...</p>
-       </div>
-       <div class="column">
-            <h6 id="isp">ISP</h6>
-            <p id="IspPargraph">Loading...</p>
-       </div>
-
     </div>
+    </div>-->
  <!-- Map Area -->
    
     <div id="map">
         <h1>Loading...</h1>
     </div>
-
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
