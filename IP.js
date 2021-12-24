@@ -70,7 +70,7 @@ const markerIcon = L.icon ({
 //display location 
 
 function displaylocation(lat, lng){
-    map.setView([lat, lng], 13);
+    map.setView([lat, lng], 18);
     L.marker([lat, lng], {icon: markerIcon}).addTo(map);
 }
 
