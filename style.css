@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Rubik', sans-serif;
 }
 #form-container{
     width: 100vw;
@@ -8,7 +9,7 @@ body{
     position: relative;
     display:flex;
     flex-direction:column ;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background:url("pattern-bg.png");
     background-repeat: no-repeat;
@@ -17,10 +18,8 @@ body{
 #form-container h1{
     font-size: 2.188rem;
     color: white;
-    font-family: 'Rubik', sans-serif;
     display: flex;
     height: 2.5rem;
-    margin-bottom: 1.875rem;
 }
 #map{
     width: 100vw;
@@ -38,12 +37,13 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    width: 43.75rem;
+    width: 50%;
     height: 3.75rem;
     position: relative;
     border-radius: 0.938rem;
-    margin-bottom: 6.875rem;
+    margin-bottom: 2.875rem;
     min-width: 15.313rem;
+    z-index: 1000;
 }
 #button{
     width: 11%;
@@ -63,66 +63,94 @@ body{
     outline: none;
     padding-left: 15px;
 }
-#output-area{
+p{
+    padding: 0;
+}
+.output{
+    border-radius: 10px;
     display: flex;
-    justify-content: space-evenly;
-    background-color: white;
-    box-shadow: 8px 4px 16px -4px grey;
-    border-radius: 20px;
-    position: absolute;
-    left: 50%;
-    width: 70%;
-    transform: translate(-50%, -50%);
-    padding: 1.813rem 2.813rem;
-    min-height: 60px;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 75%;
+    padding:5px;
     z-index: 1000;
 }
-.column{
-    width: 9.375rem;
+
+.output ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0;
 }
-.column:not(:first-child) {
-    padding-left: 0.625rem;
-    border-left: 1px solid lightgrey;
+
+.output ul li{
+    margin-left: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px lightgrey solid;
+    padding-left: 20px;
 }
-h6{
-    color: rgb(172, 172, 172);
-    font-family: 'Rubik', sans-serif;
-    font-size: xx-small;
-     margin-top: 0rem;
+.output ul li:first-child{
+    border-left:none;
 }
-p{
+.output ul li .title{
+    font-size: 12px;
+    margin-bottom: 10px;
+    opacity: 0.75;
+    font-weight:750 ;
+    color: rgb(44, 44, 44);
+}
+.output ul li .information{
     font-weight: bold;
-    font-size: larger;
-    font-family: 'Rubik', sans-serif;
-    width: 9.375rem;
+    font-size: 20px;
 }
-@media only screen and (max-width: 768PX) {
-    #output-area{ 
-        height: 42%;
-        top: 47%;
-        flex-direction: column;
+
+.leaflet-control-zoom {
+    position:fixed;
+   margin: 200PX;
+}
+
+@media only screen and (max-width: 768px){
+    .output{
+        width: 90%;
+        height: max-content;
+        padding: 0;
+    }
+    .output ul{
         text-align: center;
-        justify-content: center; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
     }
-    .column{
-         margin: auto;
-         width: 15.625rem;
-        }
-    .column:not(:first-child){
-        border-left: none;
-        }
-    #Input-area{
-        max-width: 70%;
-    }
-    #Input-area #input-ip{
-        font-size: 0.781rem;
-        
-    }
-    #form-container h1{
-        font-size: x-large;
-        margin-top: 1.875rem;
-    }
-    p{
-        width: 15.625rem;
-    }
+.output ul li .information{
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.output ul li .title{
+    margin: 5px 0px;
+}
+.output ul li {
+  border: none;
+  padding: 0;
+}
+#input-area{
+    width: 90%;
+}
+#button {
+    width: 25%;
+
+  }
+
+#Input-area #input-ip{
+    font-size: 0.781rem;  
+}
+#input-ip::placeholder{
+    font-size: 0.651rem;
+}
+#form-container h1{
+    font-size: x-large;
+    margin-top: 1.875rem;
+}
 }
