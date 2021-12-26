@@ -1,5 +1,5 @@
 //
-let api ="https://geo.ipify.org/api/v2/country,city?apiKey=at_5XuE136gmhodGZQz7Kgo9AQETwusJ&ipAddress=";
+let api ="https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_Dso8uLvMwQs7SxbcA2UMLYfNHDPsm&ipAddress=";
 let input_ip = id("input-ip");
 let searrch_btn = id("button");
 let ip_address_print = id("ipAddressPargraph");
