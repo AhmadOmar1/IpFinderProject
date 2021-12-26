@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Rubik', sans-serif;
 }
 #form-container{
     width: 100vw;
@@ -8,45 +9,45 @@ body{
     position: relative;
     display:flex;
     flex-direction:column ;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background:url("pattern-bg.png");
     background-repeat: no-repeat;
     background-size:cover;
 }
 #form-container h1{
-    font-size: 35px;
+    font-size: 2.188rem;
     color: white;
-    font-family: 'Rubik', sans-serif;
     display: flex;
-    height: 40px;
-    margin-bottom: 30px;
+    height: 2.5rem;
 }
 #map{
     width: 100vw;
     height: 65vh;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(102, 101, 101);
     display:flex;
     justify-content: center;
     align-items: center;
     color: whitesmoke;
 }
-#button , #Input-area ,#input-ip {
+ #Input-area ,#input-ip {
     height: 6.5vh;
 } 
 #Input-area{
     display:flex;
     justify-content: center;
     align-items: center;
-    width: 700px;
-    height: 60px;
+    width: 50%;
+    height: 3.75rem;
     position: relative;
-    border-radius: 15px;
-    margin-bottom: 110px;
-    min-width: 245px;
+    border-radius: 0.938rem;
+    margin-bottom: 2.875rem;
+    min-width: 15.313rem;
+    z-index: 1000;
 }
 #button{
     width: 11%;
+    height: 6.8vh;
     border-radius: 0px 15px 15px 0px;
     border: none;
     background: #000;
@@ -57,71 +58,99 @@ body{
 #input-ip{
     width: 89%;
     border-radius: 15px 0px 0px 15px;
-    font-size: 24px;
+    font-size: 1.5rem;
     border: none;
-
-}
-#output-area{
-    display: flex;
-    justify-content: space-evenly;
-    background-color: white;
-    box-shadow: 8px 4px 16px -4px grey;
-    border-radius: 20px;
-    position: absolute;
-    left: 50%;
-    top: 35%;
-    width: 70%;
-    transform: translate(-50%, -50%);
-    padding: 29px 45PX;
-    min-height: 60px;
-    z-index: 1000;
-}
-.column{
-    width: 150px;
-}
-.column:not(:first-child) {
-    padding-left: 10px;
-    border-left: 1px solid lightgrey;
-}
-h6{
-    color: rgb(172, 172, 172);
-    font-family: 'Rubik', sans-serif;
-    font-size: xx-small;
-     margin-top: 0px;
+    outline: none;
+    padding-left: 15px;
 }
 p{
-    font-weight: bold;
-    font-size: larger;
-    font-family: 'Rubik', sans-serif;
-    width: 150px;
+    padding: 0;
 }
-@media only screen and (max-width: 768PX) {
-    #output-area{ 
-        height: 42%;
-        top: 47%;
-        flex-direction: column;
+.output{
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 75%;
+    padding:5px;
+    z-index: 1000;
+}
+
+.output ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+.output ul li{
+    margin-left: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px lightgrey solid;
+    padding-left: 20px;
+}
+.output ul li:first-child{
+    border-left:none;
+}
+.output ul li .title{
+    font-size: 12px;
+    margin-bottom: 10px;
+    opacity: 0.75;
+    font-weight:750 ;
+    color: rgb(44, 44, 44);
+}
+.output ul li .information{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.leaflet-control-zoom {
+    position:fixed;
+   margin: 200PX;
+}
+
+@media only screen and (max-width: 768px){
+    .output{
+        width: 90%;
+        height: max-content;
+        padding: 0;
+    }
+    .output ul{
         text-align: center;
-        justify-content: center; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
     }
-    .column{
-         margin: auto;
-         width: 250px;
-        }
-    .column:not(:first-child){
-        border-left: none;
-        }
-    #Input-area{
-        max-width: 70%;
-    }
-    #Input-area #input-ip{
-        font-size: 12.5px;
-        
-    }
-    #form-container h1{
-        font-size: x-large;
-        margin-top: 30px;
-    }
-    p{
-        width: 250px;
-    }
+.output ul li .information{
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.output ul li .title{
+    margin: 5px 0px;
+}
+.output ul li {
+  border: none;
+  padding: 0;
+}
+#input-area{
+    width: 90%;
+}
+#button {
+    width: 25%;
+
+  }
+
+#Input-area #input-ip{
+    font-size: 0.781rem;  
+}
+#input-ip::placeholder{
+    font-size: 0.651rem;
+}
+#form-container h1{
+    font-size: x-large;
+    margin-top: 1.875rem;
+}
 }
