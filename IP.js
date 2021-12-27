@@ -1,5 +1,5 @@
 //Variable definitions
-let api ="https://geo.ipify.org/api/v2/country,city?apiKey=at_PhLz2yhuzpsjlcFOcNX6MEx478Yv2&ipAddress=";
+let api ="https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_CGoWEsQyq34npeVDfYZfbImoWpT3n&ipAddress=";
 let input_ip = id("input-ip");
 let searrch_btn = id("button");
 let location_back = id("to_location");
@@ -7,6 +7,7 @@ let ip_address_print = id("ipAddressPargraph");
 let location_print = id("LocationPargraph");
 let tzone_print =id("TimeZonePargraph");
 let isp_print = id("IspPargraph");
+let marker;
 //functions call
 window.addEventListener("load", get_ip_information);
 searrch_btn.addEventListener("click",get_ip_information);
@@ -17,7 +18,6 @@ async function get_ip_information()
 {
     const response = await fetch(api+input_ip.value);
     const data = await response.json();
-    console.log(data);
     let lat = data.location.lat;
     let lng = data.location.lng;
     if(data.code == 422)
@@ -55,6 +55,7 @@ function print(data)
 }
 //text select
 function textSelection() {
+    
     input_ip.select();
   }
 //helper function
@@ -62,27 +63,32 @@ function textSelection() {
     return document.getElementById(name);
   }
   
+  var layer = new L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    noWrap: true,
+    minZoom :3,
+    maxZoom :18,
+
+});
 // MAP AREA
 const map = L.map('map', {
     'center': [0,0],
     'zoom': 13,
-    'layers': [
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright%22%3EOpenStreetMap</a> contributors'
-          })
+    'layers': [layer
     ]
 })
 // MARKER AREA
 const markerIcon = L.icon ({
     iconUrl: "mark-location.svg",
-    iconSize: [30, 40]
+    iconSize: [40, 50]
 });
 
 //display location 
 
 function displaylocation(lat, lng){
+   
+    if (marker != null) marker.remove();
     map.setView([lat, lng], 13);
-    L.marker([lat, lng], {icon: markerIcon}).addTo(map);
+    marker=L.marker([lat, lng], {icon: markerIcon}).addTo(map);
 }
 
 // enter click 

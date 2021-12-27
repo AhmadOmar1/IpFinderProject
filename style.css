@@ -5,7 +5,8 @@ body{
 }
 #form-container{
     width: 100vw;
-    height: 35vh;
+    height: 30vh;
+    min-height: 270px;
     position: relative;
     display:flex;
     flex-direction:column ;
@@ -20,15 +21,13 @@ body{
     color: white;
     display: flex;
     height: 2.5rem;
+    margin:30px auto;
 }
-.header-title
-{
-    margin-bottom:30px ;
-}
+
 #map{
     width: 100vw;
     position: relative;
-    min-height: 65vh;
+    min-height: 70vh;
     background-color: rgb(102, 101, 101);
     display:flex;
     justify-content: center;
@@ -64,8 +63,8 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    height: 3.75rem;
+    width: 38%;
+    height: 60px;
     position: relative;
     border-radius: 0.938rem;
     margin-bottom: 2.875rem;
@@ -73,8 +72,8 @@ body{
     z-index: 1000;
 }
 #button{
-    width: 11%;
-    height: 6.8vh;
+    width: 70px;
+    height: 60px;
     border-radius: 0px 15px 15px 0px;
     border: none;
     background: #000;
@@ -83,9 +82,10 @@ body{
     font-weight:bold ;
 }
 #input-ip{
-    width: 89%;
+    width: 100%;
     border-radius: 15px 0px 0px 15px;
     font-size: 1.5rem;
+    height: 60px;
     border: none;
     outline: none;
     padding-left: 15px;
@@ -107,14 +107,13 @@ p{
 .output ul{
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
     padding: 0;
 }
 
 .output ul li{
-    margin-left: 10px;
     list-style: none;
     display: flex;
+    width: 50%;
     flex-direction: column;
     border-left: 1px lightgrey solid;
     padding-left: 20px;
@@ -133,9 +132,24 @@ p{
     font-size: 20px;
 }
 
+@media only screen and (max-width: 400px){
+    .output ul li{
+        
+        width: unset;
+    }
+    .output ul li .information{
+        font-size: 16px;
+    }
+    .output ul li .title{
+        font-size: 14px;
+    }
+}
 @media only screen and (max-width: 768px){
     #form-container{  
     height: 40vh;
+    }
+    #map{
+        height: 60px;
     }
     .output{
         width: 90%;
@@ -167,10 +181,7 @@ p{
     }
     #Input-area{
         width: 90%;
-    }
-    #button {
-        width: 25%;
-
+        margin-bottom: 30px;
     }
 
     #Input-area #input-ip{
@@ -182,7 +193,6 @@ p{
     }
     #form-container h1{
         font-size: x-large;
-        margin-top: 1.875rem;
     }
     #to_location{
         
