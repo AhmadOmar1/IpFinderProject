@@ -31,25 +31,25 @@ body{
     align-items: center;
     color: whitesmoke;
 }
-#map button{
+#to_location{
     border-radius: 50%;
     position: fixed;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.849);
     z-index: 1000;
     border: none;
     right: 10px;
-    top: 40px;
+    top: 500px;
     padding: 10px;
     width: 40px;
     background-color: white;
     
 }
-#map button:hover {
+#to_location:hover {
     
     background-color: black;
     
 }
-#map button:hover svg path  {
+#to_location:hover svg path  {
     fill: white;
     
 }
@@ -130,11 +130,6 @@ p{
     font-size: 20px;
 }
 
-.leaflet-control-zoom {
-    position:fixed;
-   margin: 200PX;
-}
-
 @media only screen and (max-width: 768px){
     .output{
         width: 90%;
@@ -183,19 +178,19 @@ p{
     font-size: x-large;
     margin-top: 1.875rem;
 }
-#map button{
+#to_location{
     
-    top: 500px;
+    top: 90%;
     height:40PX ;
     width: 40px;
 }
 #map{
     min-height:95vh ;
 }
-#map button:hover{
+#to_location:hover{
     background-color: white;
 }
-#map button:hover svg path{
+#to_location:hover svg path{
     fill: black;
 }
 }
