@@ -1,21 +1,25 @@
-//
+//Variable definitions
 let api ="https://geo.ipify.org/api/v2/country,city?apiKey=at_PhLz2yhuzpsjlcFOcNX6MEx478Yv2&ipAddress=";
 let input_ip = id("input-ip");
 let searrch_btn = id("button");
+let location_back = id("to_location");
 let ip_address_print = id("ipAddressPargraph");
 let location_print = id("LocationPargraph");
 let tzone_print =id("TimeZonePargraph");
 let isp_print = id("IspPargraph");
-
+//functions call
 window.addEventListener("load", get_ip_information);
 searrch_btn.addEventListener("click",get_ip_information);
 input_ip.addEventListener("click",textSelection);
 
+// GET IP INFORMATION 
 async function get_ip_information()
 {
     const response = await fetch(api+input_ip.value);
     const data = await response.json();
     console.log(data);
+    let lat = data.location.lat;
+    let lng = data.location.lng;
     if(data.code == 422)
     {
         alert(input_ip.value + " IP Address not found !");
@@ -23,9 +27,15 @@ async function get_ip_information()
     else
     {
         print(data);
-        displaylocation(data.location.lat, data.location.lng);    }
-}
+        displaylocation(lat,lng);    
+    }
+    location_back.addEventListener("click",function ()
+    {
+        map.flyTo([lat, lng], 13);
+    });
 
+}
+//Prevent the entry of anything that is not allowed 
 function validate(evt)
 {
     let valid = /[0-9.]/;
@@ -35,7 +45,7 @@ function validate(evt)
         evt.preventDefault();
     }
 }
-
+// print location information
 function print(data)
 {
     ip_address_print.innerHTML = data.ip;
@@ -43,10 +53,11 @@ function print(data)
     tzone_print.innerHTML = "UTC " + data.location.timezone;
     isp_print.innerHTML = data.isp ;
 }
-
+//text select
 function textSelection() {
     input_ip.select();
   }
+//helper function
  function id(name) {
     return document.getElementById(name);
   }
@@ -81,8 +92,3 @@ input_ip.addEventListener("keyup", function(event) {
       searrch_btn.click();
     }
   });
-
-
-
-
-
