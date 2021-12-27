@@ -8,41 +8,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
     <title>IP Address Tracker</title>
 </head>
 
-<body> 
-        <div id="form-container">
-            <h1>IP Address Tracker</h1>
-            <!-- Input - Search Form Entering Ip -->
-            <div id="Input-area">
-                <input id="input-ip" type="text" onkeypress="validate(event)" placeholder="Search for any IP address or domain">
-                <input id="button" type="button" value="&#x276F;">
-            </div>
-               <!-- output Form For display  -->
-               <div class="output">
-                <ul>
-                <li><p class="title">IP ADDRESS</p> <p class="information" id="ipAddressPargraph">Loading...</p></li>
-                <li><p class="title">LOCATION</p> <p class="information" id="LocationPargraph">Loading...</p></li>
-                <li><p class="title">TIME ZONE</p> <p class="information" id="TimeZonePargraph">Loading...</p></li>
-                <li><p class="title">ISP</p> <p class="information" id="IspPargraph">Loading...</p></li>
-                </ul>
-            </div>
+<body>
+    <div id="form-container">
+        <h1 class="header-title">IP Address Tracker</h1>
+        <!-- Input - Search Form Entering Ip -->
+        <div id="Input-area">
+            <input id="input-ip" type="text" onkeypress="validate(event)"
+                placeholder="Search for any IP address or domain">
+            <input id="button" type="button" value="&#x276F;">
+        </div>
+        <!-- output Form For display  -->
+        <div class="output">
+            <ul>
+                <li>
+                    <p class="title">IP ADDRESS</p>
+                    <p class="information" id="ipAddressPargraph">Loading...</p>
+                </li>
+                <li>
+                    <p class="title">LOCATION</p>
+                    <p class="information" id="LocationPargraph">Loading...</p>
+                </li>
+                <li>
+                    <p class="title">TIME ZONE</p>
+                    <p class="information" id="TimeZonePargraph">Loading...</p>
+                </li>
+                <li>
+                    <p class="title">ISP</p>
+                    <p class="information" id="IspPargraph">Loading...</p>
+                </li>
+            </ul>
         </div>
     </div>
- <!-- Map Area -->
-   
+    </div>
+    <!-- Map Area -->
+
     <div id="map">
         <h1>Loading...</h1>
-        <button id="to_location" aria-label="Justify"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="location-arrow" class="svg-inline--fa fa-location-arrow fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M444.52 3.52L28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"></path></svg> </button>
+        <button id="to_location" aria-label="Justify"><svg aria-hidden="true" focusable="false" data-prefix="fas"
+                data-icon="location-arrow" class="svg-inline--fa fa-location-arrow fa-w-16" role="img"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="currentColor"
+                    d="M444.52 3.52L28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z">
+                </path>
+            </svg> </button>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
-</script>
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    </script>
     <script src="IP.js"></script>
 
 

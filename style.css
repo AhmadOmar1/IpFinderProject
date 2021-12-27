@@ -21,6 +21,10 @@ body{
     display: flex;
     height: 2.5rem;
 }
+.header-title
+{
+    margin-bottom:30px ;
+}
 #map{
     width: 100vw;
     position: relative;
@@ -119,11 +123,10 @@ p{
     border-left:none;
 }
 .output ul li .title{
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 10px;
-    opacity: 0.75;
-    font-weight:750 ;
-    color: rgb(44, 44, 44);
+    font-weight:bolder ;
+    color:#92929d
 }
 .output ul li .information{
     font-weight: bold;
@@ -131,6 +134,9 @@ p{
 }
 
 @media only screen and (max-width: 768px){
+    #form-container{  
+    height: 40vh;
+    }
     .output{
         width: 90%;
         height: max-content;
@@ -144,57 +150,58 @@ p{
         align-items: center;
         padding: 0;
     }
-.output ul li .information{
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-.leaflet-control-zoom {
-   visibility: hidden;
+    .output ul li .information{
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    .leaflet-control-zoom {
+    visibility: hidden;
+    }
+
+    .output ul li .title{
+        margin: 5px 0px;
+    }
+    .output ul li {
+    border: none;
+    padding: 0;
+    }
+    #Input-area{
+        width: 90%;
+    }
+    #button {
+        width: 25%;
+
+    }
+
+    #Input-area #input-ip{
+        font-size: 0.781rem;
+
+    }
+    #input-ip::placeholder{
+        font-size: 0.651rem;
+    }
+    #form-container h1{
+        font-size: x-large;
+        margin-top: 1.875rem;
+    }
+    #to_location{
+        
+        top: 90%;
+        height:40PX ;
+        width: 40px;
+    }
+    #map{
+        min-height:95vh ;
+    }
+    #to_location:hover{
+        background-color: white;
+    }
+    #to_location:hover svg path{
+        fill: black;
+    }
 }
 
-.output ul li .title{
-    margin: 5px 0px;
-}
-.output ul li {
-  border: none;
-  padding: 0;
-}
-#input-area{
-    width: 90%;
-}
-#button {
-    width: 25%;
-
-  }
-
-#Input-area #input-ip{
-    font-size: 0.781rem;
-
-}
-#input-ip::placeholder{
-    font-size: 0.651rem;
-}
-#form-container h1{
-    font-size: x-large;
-    margin-top: 1.875rem;
-}
-#to_location{
-    
-    top: 90%;
-    height:40PX ;
-    width: 40px;
-}
-#map{
-    min-height:95vh ;
-}
-#to_location:hover{
-    background-color: white;
-}
-#to_location:hover svg path{
-    fill: black;
-}
-}
-@media only screen and (min-width: 1500px) {
+@media only screen and(min-width: 1500px) {
     
 .output {
     
