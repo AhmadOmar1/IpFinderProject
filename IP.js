@@ -1,5 +1,5 @@
 //Variable definitions
-let api ="https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_CGoWEsQyq34npeVDfYZfbImoWpT3n&ipAddress=";
+let api ="https://geo.ipify.org/api/v2/country,city?apiKey=at_0LEnhswBi7WnKxxMMBQfatfzhp4B4&ipAddress=";
 let input_ip = id("input-ip");
 let searrch_btn = id("button");
 let location_back = id("to_location");
@@ -34,14 +34,12 @@ async function get_ip_information()
     {
         map.flyTo([lat, lng], 13);
     });
-   
-
 }
 //Prevent the entry of anything that is not allowed 
 function validate(evt)
 {
     let valid = /[0-9.]/;
-    var ch = String.fromCharCode(evt.which);
+    let ch = String.fromCharCode(evt.which);
     if(!valid.test(ch))
     {
         evt.preventDefault();
@@ -65,40 +63,27 @@ function textSelection() {
     return document.getElementById(name);
   }
 
-  var layer = new L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  let layer = new L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     noWrap: true,
-    minZoom :4,
+    minZoom :3,
     maxZoom :18,
 });
 
 // varriabels for max map edge
 
-var southWest = L.latLng(-89.98155760646617, -180),
+let southWest = L.latLng(-89.98155760646617, -180),
 northEast = L.latLng(89.99346179538875, 180);
 
 
 // MAP AREA
 const map = L.map('map', {
     'center': [0,0],
-    'zoom': 13,
+    'zoom': 15,
     'layers': [layer],    
-    
      // prevent the map out from the world edge
     maxBounds: [[southWest],[northEast]],
     maxBoundsViscosity: 1.5,
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -112,14 +97,18 @@ const markerIcon = L.icon ({
 //display location 
 
 function displaylocation(lat, lng){
-   
+   let city =  location_print.innerHTML.split(',');
     if (marker != null) marker.remove();
-    map.setView([lat, lng], 13);
+    map.setView([lat, lng], 14);
     marker=L.marker([lat, lng], {icon: markerIcon}).addTo(map);
-    marker.bindPopup("You are in "+location_print.innerHTML+" dude .. !");
+    marker.bindPopup("Here is "+city[0]+" City dude .. !");
     marker.on('click', printIconMsg);
 }
-
+// print icon location name on click 
+function printIconMsg(e) {
+    let popup = e.target.getPopup();
+    let content = popup.getContent();
+}
 // enter click 
 input_ip.addEventListener("keyup", function(event) {
     if (event.key === 'Enter') {
@@ -127,15 +116,3 @@ input_ip.addEventListener("keyup", function(event) {
       searrch_btn.click();
     }
   });
-
-
- function printIconMsg(e) {
-     var popup = e.target.getPopup();
-     var content = popup.getContent();
-  
-     console.log(content);
- }
-
-
-
- 
