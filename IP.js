@@ -89,6 +89,8 @@ function displaylocation(lat, lng){
     if (marker != null) marker.remove();
     map.setView([lat, lng], 13);
     marker=L.marker([lat, lng], {icon: markerIcon}).addTo(map);
+    marker.bindPopup("You are in "+location_print.innerHTML+" dude .. !");
+    marker.on('click', printIconMsg);
 }
 
 // enter click 
@@ -98,3 +100,11 @@ input_ip.addEventListener("keyup", function(event) {
       searrch_btn.click();
     }
   });
+
+
+ function printIconMsg(e) {
+     var popup = e.target.getPopup();
+     var content = popup.getContent();
+  
+     console.log(content);
+ }
