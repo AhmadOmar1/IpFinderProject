@@ -14,14 +14,13 @@ searrch_btn.addEventListener("click",get_ip_information);
 input_ip.addEventListener("click",textSelection);
 
 // GET IP INFORMATION 
-
 async function get_ip_information()
 {
     const response = await fetch(api+input_ip.value);
     const data = await response.json();
     let lat = data.location.lat;
     let lng = data.location.lng;
-    if(data.code == 422)
+    if(input_ip.innerHTML.code === 422)
     {
         alert(input_ip.value + " IP Address not found !");
     }
@@ -55,15 +54,15 @@ function print(data)
 }
 //text select
 function textSelection() {
-    
     input_ip.select();
-  }
+}
 //helper function
  function id(name) {
     return document.getElementById(name);
   }
 
-  let layer = new L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+
+let layer = new L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     noWrap: true,
     minZoom :3,
     maxZoom :18,
@@ -77,10 +76,8 @@ northEast = L.latLng(89.99346179538875, 180);
 
 // MAP AREA
 const map = L.map('map', {
-    'center': [0,0],
-    'zoom': 15,
     'layers': [layer],    
-     // prevent the map out from the world edge
+    // prevent the map out from the world edge
     maxBounds: [[southWest],[northEast]],
     maxBoundsViscosity: 1.5,
 });
@@ -107,12 +104,10 @@ function displaylocation(lat, lng){
 // print icon location name on click 
 function printIconMsg(e) {
     let popup = e.target.getPopup();
-    let content = popup.getContent();
 }
 // enter click 
 input_ip.addEventListener("keyup", function(event) {
     if (event.key === 'Enter') {
-      event.preventDefault();
       searrch_btn.click();
     }
   });
