@@ -113,7 +113,7 @@ p{
 .output ul li{
     list-style: none;
     display: flex;
-    width: 50%;
+    width: 25%;
     flex-direction: column;
     border-left: 1px lightgrey solid;
     padding-left: 20px;
@@ -125,7 +125,7 @@ p{
     font-size: 14px;
     margin-bottom: 10px;
     font-weight:bolder ;
-    color:#92929d
+    color:#6a6a72
 }
 .output ul li .information{
     font-weight: bold;
