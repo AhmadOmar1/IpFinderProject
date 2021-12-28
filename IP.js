@@ -14,6 +14,7 @@ searrch_btn.addEventListener("click",get_ip_information);
 input_ip.addEventListener("click",textSelection);
 
 // GET IP INFORMATION 
+
 async function get_ip_information()
 {
     const response = await fetch(api+input_ip.value);
@@ -33,6 +34,7 @@ async function get_ip_information()
     {
         map.flyTo([lat, lng], 13);
     });
+   
 
 }
 //Prevent the entry of anything that is not allowed 
@@ -62,20 +64,45 @@ function textSelection() {
  function id(name) {
     return document.getElementById(name);
   }
-  
+
   var layer = new L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     noWrap: true,
     minZoom :4,
     maxZoom :18,
-
 });
+
+// varriabels for max map edge
+
+var southWest = L.latLng(-89.98155760646617, -180),
+northEast = L.latLng(89.99346179538875, 180);
+
+
 // MAP AREA
 const map = L.map('map', {
     'center': [0,0],
     'zoom': 13,
-    'layers': [layer
-    ]
-})
+    'layers': [layer],    
+    
+     // prevent the map out from the world edge
+    maxBounds: [[southWest],[northEast]],
+    maxBoundsViscosity: 1.5,
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // MARKER AREA
 const markerIcon = L.icon ({
     iconUrl: "mark-location.svg",
@@ -108,3 +135,7 @@ input_ip.addEventListener("keyup", function(event) {
   
      console.log(content);
  }
+
+
+
+ 
