@@ -65,7 +65,7 @@ function textSelection() {
   
   var layer = new L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     noWrap: true,
-    minZoom :3,
+    minZoom :4,
     maxZoom :18,
 
 });

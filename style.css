@@ -5,7 +5,7 @@ body{
 }
 #form-container{
     width: 100vw;
-    height: 30vh;
+    height: 270px;
     min-height: 270px;
     position: relative;
     display:flex;
@@ -27,7 +27,7 @@ body{
 #map{
     width: 100vw;
     position: relative;
-    min-height: 70vh;
+    height: calc(100vh - 270px);
     background-color: rgb(102, 101, 101);
     display:flex;
     justify-content: center;
@@ -146,10 +146,10 @@ p{
 }
 @media only screen and (max-width: 768px){
     #form-container{  
-    height: 40vh;
+    height: 290px;
     }
     #map{
-        height: 60px;
+        height: calc(100vh - 290px);
     }
     .output{
         width: 90%;
@@ -211,12 +211,3 @@ p{
     }
 }
 
-@media only screen and (min-width: 1500px) {
-    #form-container{  
-        height: 22vh;
-        min-height: unset!important }
-    #map{  
-        height: 78vh;
-        }
-
-}
