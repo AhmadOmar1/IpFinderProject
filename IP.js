@@ -18,20 +18,20 @@ async function get_ip_information()
 {
     const response = await fetch(api+input_ip.value);
     const data = await response.json();
-    let lat = data.location.lat;
-    let lng = data.location.lng;
-    if(input_ip.innerHTML.code === 422)
+    
+    if(data.code === 422)
     {
         alert(input_ip.value + " IP Address not found !");
     }
     else
     {
         print(data);
-        displaylocation(lat,lng);    
+        displaylocation(data.location.lat,data.location.lng);  
+          
     }
     location_back.addEventListener("click",function ()
     {
-        map.flyTo([lat, lng], 13);
+        map.flyTo([data.location.lat, data.location.lng], 13);
     });
 }
 //Prevent the entry of anything that is not allowed 
