@@ -211,10 +211,12 @@ p{
     }
 }
 
-@media only screen and(min-width: 1500px) {
-    
-.output {
-    
-    margin-top: 70px;
-}
+@media only screen and (min-width: 1500px) {
+    #form-container{  
+        height: 22vh;
+        min-height: unset!important }
+    #map{  
+        height: 78vh;
+        }
+
 }
