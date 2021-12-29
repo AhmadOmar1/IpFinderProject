@@ -1,5 +1,5 @@
-//Variable definitions
-let api ="https://geo.ipify.org/api/v2/country,city?apiKey=at_0LEnhswBi7WnKxxMMBQfatfzhp4B4&ipAddress=";
+//Variable definitions 
+let api ="https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_FQJ7xkjYuhvx9ZjCv7IS2XJnrcdcM&ipAddress=";
 let input_ip = id("input-ip");
 let searrch_btn = id("button");
 let location_back = id("to_location");
@@ -62,19 +62,20 @@ function textSelection() {
   }
 
 
-let layer = new L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+let layer = new L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     noWrap: true,
     minZoom :3,
     maxZoom :18,
 });
 
-// varriabels for max map edge
 
+
+// varriabels for max map edge
 let southWest = L.latLng(-89.98155760646617, -180),
 northEast = L.latLng(89.99346179538875, 180);
 
 
-// MAP AREA
+//MAP AREA
 const map = L.map('map', {
     'layers': [layer],    
     // prevent the map out from the world edge
@@ -91,20 +92,20 @@ const markerIcon = L.icon ({
     iconSize: [40, 50]
 });
 
-//display location 
 
+
+
+//display location 
 function displaylocation(lat, lng){
-   let city =  location_print.innerHTML.split(',');
+     let city =  location_print.innerHTML.split(',');
     if (marker != null) marker.remove();
     map.setView([lat, lng], 14);
     marker=L.marker([lat, lng], {icon: markerIcon}).addTo(map);
-    marker.bindPopup("Here is "+city[0]+" City dude .. !");
-    marker.on('click', printIconMsg);
+    marker.bindPopup("Here is "+city[0]+"  dude .. !");
 }
-// print icon location name on click 
-function printIconMsg(e) {
-    let popup = e.target.getPopup();
-}
+
+
+
 // enter click 
 input_ip.addEventListener("keyup", function(event) {
     if (event.key === 'Enter') {
