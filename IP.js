@@ -12,7 +12,6 @@ let marker;
 window.addEventListener("load", get_ip_information);
 searrch_btn.addEventListener("click",get_ip_information);
 input_ip.addEventListener("click",textSelection);
-
 // GET IP INFORMATION 
 async function get_ip_information()
 {
@@ -60,21 +59,14 @@ function textSelection() {
  function id(name) {
     return document.getElementById(name);
   }
-
-
 let layer = new L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     noWrap: true,
     minZoom :3,
     maxZoom :18,
 });
-
-
-
 // varriabels for max map edge
 let southWest = L.latLng(-89.98155760646617, -180),
 northEast = L.latLng(89.99346179538875, 180);
-
-
 //MAP AREA
 const map = L.map('map', {
     'layers': [layer],    
@@ -82,19 +74,11 @@ const map = L.map('map', {
     maxBounds: [[southWest],[northEast]],
     maxBoundsViscosity: 1.5,
 });
-
-
-
-
 // MARKER AREA
 const markerIcon = L.icon ({
     iconUrl: "mark-location.svg",
     iconSize: [40, 50]
 });
-
-
-
-
 //display location 
 function displaylocation(lat, lng){
      let city =  location_print.innerHTML.split(',');
@@ -103,9 +87,6 @@ function displaylocation(lat, lng){
     marker=L.marker([lat, lng], {icon: markerIcon}).addTo(map);
     marker.bindPopup("Here is "+city[0]+"  dude .. !");
 }
-
-
-
 // enter click 
 input_ip.addEventListener("keyup", function(event) {
     if (event.key === 'Enter') {
